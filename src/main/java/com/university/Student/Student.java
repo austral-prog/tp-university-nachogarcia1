@@ -8,30 +8,38 @@ public class Student {
 
     private String name;
     private String studentEmail;
-    private HashMap<String, List<String>> courses;
+    private List<String> subjects;
+    private HashMap<String, List<String>> assesments;
 
 
     public Student(String name, String studentEmail) {
+        this.subjects = new ArrayList<>();
         this.name = name;
         this.studentEmail = studentEmail;
     }
+
+    //getters
 
     public String getName() {
         return name;
     }
 
-    public int getCoursesAmount(){
-        return courses.size();
-    }
+    public String getAssesments() {return assesments.toString();}
 
-    public HashMap<String, List<String>> getCourses() {return courses;}
+    public int getSubjects() {return subjects.size();}
 
-    public void addCourse(String subject, String classroom) {
-        if (!courses.containsKey(subject)) {
-            courses.put(subject, new ArrayList<>());
-            courses.get(subject).add(classroom);
+
+    //adders
+
+    public void addSubject(String subject) {
+        if (!subjects.contains(subject)) {
+            subjects.add(subject);
         }
     }
+
+
+    //identity
+
     public int hashCode() {
         return Objects.hash(name);
     }
