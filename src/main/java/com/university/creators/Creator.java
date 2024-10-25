@@ -1,12 +1,14 @@
-package com.university.Creators;
+package com.university.creators;
 
-import com.university.CSV.CSVreader;
-import com.university.Student.Student;
+import com.university.csv.CSVreader;
+import com.university.student.Student;
+import com.university.University;
 
 import java.util.*;
 
+import static com.university.University.studentByName;
+
 public class Creator {
-    private Map<String, Student> studentMap = new HashMap<>();
 
     public Creator(String fileName) {
         try {
@@ -15,13 +17,13 @@ public class Creator {
             List<String[]> allData = csvreader.getData();
 
             for (String[] data : allData) {
-                if (data.length >= 4) {
+                if (data.length != 0) {
                     String subject = data[1];
                     String studentName = data[2];
                     String studentEmail = data[3];
 
                     // Verificamos si el estudiante ya existe en el mapa
-                    Student student = studentMap.get(studentName);
+                    Student student = studentByName.get(studentName);
 
                     if (student != null) {
                         student.addSubject(subject); // Si ya existe, agregamos la asignatura
@@ -29,10 +31,10 @@ public class Creator {
                         // Si no existe, lo creamos y lo agregamos al mapa
                         Student newStudent = new Student(studentName, studentEmail);
                         newStudent.addSubject(subject);
-                        studentMap.put(studentName, newStudent);
+                        studentByName.put(studentName, newStudent);
                     }
                 } else {
-                    System.out.println("Fila inválida en CSV: " + Arrays.toString(data));
+                    break;
                 }
             }
         } catch (Exception e) {
@@ -41,6 +43,6 @@ public class Creator {
     }
 
     public List<Student> getStudentList() {
-        return new ArrayList<>(studentMap.values());
+        return new ArrayList<>(studentByName.values());
     }
 }

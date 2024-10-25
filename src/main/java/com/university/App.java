@@ -1,8 +1,8 @@
 package com.university;
 
-import com.university.CSV.CSVwritter;
-import com.university.Creators.Creator;
-import com.university.FileSolutionCreator.Datasorter1;
+import com.university.csv.CSVwritter;
+import com.university.creators.Creator;
+import com.university.fileSolutionCreator.Datasorter1;
 
 
 public class App {

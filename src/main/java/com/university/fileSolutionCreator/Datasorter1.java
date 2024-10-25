@@ -1,9 +1,8 @@
-package com.university.FileSolutionCreator;
+package com.university.fileSolutionCreator;
 
 
-import com.university.Creators.Creator;
-import com.university.Student.Student;
-import com.university.Student.StudentSorter;
+import com.university.student.Student;
+import com.university.student.StudentSorter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ public class Datasorter1 {
         StudentSorter studentSorter = new StudentSorter(students);
         List<Student> orderedStudents = studentSorter.getOrderedStudents();
         for (Student student : orderedStudents) {
-            String[] row = {student.getName(), String.valueOf(student.getSubjects())};
+            String[] row = {student.getName(), String.valueOf(student.getSubjectsamount())};
             fileData.add(row);
         }
     }

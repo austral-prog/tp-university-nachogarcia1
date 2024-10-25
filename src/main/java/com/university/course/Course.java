@@ -1,6 +1,6 @@
-package com.university.Course;
+package com.university.course;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,23 +13,18 @@ public class Course {
 
     public Course(String name) {
         this.name = name;
-        this.classrooms = new LinkedList<>();
+        this.classrooms = new ArrayList<>();
 
     }
+
+    //getter
 
     public String getSubject() {
         return name;
     }
 
-    public void addClassroom(String classroom){
-        if (!classrooms.contains(classroom)){
-            classrooms.add(classroom);
-        }
-    }
+    //identity
 
-    public int getClassroomsAmount() {
-        return classrooms.size();
-    }
 
     public int hashCode() {
         return Objects.hash(name);

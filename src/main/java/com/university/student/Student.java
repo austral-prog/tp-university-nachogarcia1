@@ -1,6 +1,4 @@
-package com.university.Student;
-
-import com.university.Course.Course;
+package com.university.student;
 
 import java.util.*;
 
@@ -8,12 +6,11 @@ public class Student {
 
     private String name;
     private String studentEmail;
-    private List<String> subjects;
-    private HashMap<String, List<String>> assesments;
+    private HashMap<String, List<String>> subjects;
 
 
     public Student(String name, String studentEmail) {
-        this.subjects = new ArrayList<>();
+        this.subjects = new HashMap<>();
         this.name = name;
         this.studentEmail = studentEmail;
     }
@@ -24,18 +21,18 @@ public class Student {
         return name;
     }
 
-    public String getAssesments() {return assesments.toString();}
 
-    public int getSubjects() {return subjects.size();}
+    public int getSubjectsamount() {return subjects.size();}
 
 
     //adders
 
     public void addSubject(String subject) {
-        if (!subjects.contains(subject)) {
-            subjects.add(subject);
+        if (!subjects.containsKey(subject)) {
+            subjects.put(subject, new ArrayList<String>());  // Crear una nueva lista de cadenas
         }
     }
+
 
 
     //identity

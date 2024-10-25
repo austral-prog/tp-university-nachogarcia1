@@ -1,4 +1,4 @@
-package com.university.CSV;
+package com.university.csv;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
