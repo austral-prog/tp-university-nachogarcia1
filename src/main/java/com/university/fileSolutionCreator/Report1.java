@@ -9,11 +9,11 @@ import java.util.List;
 
 
 
-public class Datasorter1 {
+public class Report1 {
 
     private List<String[]> fileData = new ArrayList<>();
 
-    public Datasorter1(List<Student> students) {
+    public Report1(List<Student> students) {
         StudentSorter studentSorter = new StudentSorter(students);
         List<Student> orderedStudents = studentSorter.getOrderedStudents();
         for (Student student : orderedStudents) {

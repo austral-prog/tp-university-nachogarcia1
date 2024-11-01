@@ -2,7 +2,7 @@ package com.university;
 
 import com.university.csv.CSVwritter;
 import com.university.creators.Creator;
-import com.university.fileSolutionCreator.Datasorter1;
+import com.university.fileSolutionCreator.Report1;
 
 
 public class App {
@@ -17,7 +17,7 @@ public class App {
 
 
 
-        CSVwritter csvWritter1 = new CSVwritter(header1, fileOut1, (new Datasorter1(new Creator(fileIn1).getStudentList())).getFileData());
+        CSVwritter csvWritter1 = new CSVwritter(header1, fileOut1, (new Report1(new Creator(fileIn1).getStudentList())).getFileData());
         csvWritter1.write(",");
 
 

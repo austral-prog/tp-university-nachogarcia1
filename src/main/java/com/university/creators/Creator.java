@@ -17,7 +17,7 @@ public class Creator {
             List<String[]> allData = csvreader.getData();
 
             for (String[] data : allData) {
-                if (data.length != 0) {
+                if (data.length != 0) { //si quedan datos por leer
                     String subject = data[1];
                     String studentName = data[2];
                     String studentEmail = data[3];

@@ -1,5 +1,10 @@
 package com.university.course;
 
+import com.university.evaluation.Assesment;
+import com.university.evaluation.OralExam;
+import com.university.evaluation.PracticalWork;
+import com.university.evaluation.WrittenExam;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -8,6 +13,10 @@ public class Course {
 
     String name;
     List<String> classrooms;
+
+    List<PracticalWork> practicalWorks;
+    List<WrittenExam> writtenExams;
+    List<OralExam> oralExams;
 
 
 
