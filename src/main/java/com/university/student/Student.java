@@ -6,11 +6,12 @@ public class Student {
 
     private String name;
     private String studentEmail;
-    private HashMap<String, List<String>> subjects;
+    private List<String> subjectsenlisted;
 
 
     public Student(String name, String studentEmail) {
-        this.subjects = new HashMap<>();
+        this.subjectsenlisted = new ArrayList<>() {
+        };
         this.name = name;
         this.studentEmail = studentEmail;
     }
@@ -22,14 +23,18 @@ public class Student {
     }
 
 
-    public int getSubjectsamount() {return subjects.size();}
+    public int getSubjectsamount() {return subjectsenlisted.size();}
+
+    public List<String> getSubjects() {
+        return subjectsenlisted;
+    }
 
 
     //adders
 
     public void addSubject(String subject) {
-        if (!subjects.containsKey(subject)) {
-            subjects.put(subject, new ArrayList<String>());  // Crear una nueva lista de cadenas
+        if (!subjectsenlisted.contains(subject)) {
+            subjectsenlisted.add(subject);  // Crear una nueva lista de cadenas
         }
     }
 

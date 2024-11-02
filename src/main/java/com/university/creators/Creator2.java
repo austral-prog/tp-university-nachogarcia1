@@ -1,11 +1,15 @@
 package com.university.creators;
 
 import com.university.csv.CSVreader;
+import com.university.evaluation.Assessment;
 import com.university.student.Student;
+
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.university.University.studentByName;
 
 public class Creator2 {
 
@@ -18,6 +22,7 @@ public class Creator2 {
 
     for (String[] data : allData) {
         if (data.length != 0) {
+
             //si quedan datos por leer
 
 
@@ -29,7 +34,11 @@ public class Creator2 {
             String  exerciseName = data [4];
             String  grade = data[5];
 
-            for Student in
+            if (studentByName.containsKey(student)) {
+                Student studentObj = studentByName.get(student);
+
+                if (studentObj.getSubjects().containsValue(subject)) {
+                    Assessment newAssessment = new Assessment(student, subject, evaluationType, evaluationName, exerciseName, grade);
 
         }
     }

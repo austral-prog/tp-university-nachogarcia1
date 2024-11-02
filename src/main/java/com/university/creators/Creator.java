@@ -1,11 +1,13 @@
 package com.university.creators;
 
+import com.university.course.Course;
 import com.university.csv.CSVreader;
 import com.university.student.Student;
 import com.university.University;
 
 import java.util.*;
 
+import static com.university.University.coursesbystudent;
 import static com.university.University.studentByName;
 
 public class Creator {
@@ -18,6 +20,7 @@ public class Creator {
 
             for (String[] data : allData) {
                 if (data.length != 0) { //si quedan datos por leer
+
                     String subject = data[1];
                     String studentName = data[2];
                     String studentEmail = data[3];
@@ -30,8 +33,10 @@ public class Creator {
                     } else {
                         // Si no existe, lo creamos y lo agregamos al mapa
                         Student newStudent = new Student(studentName, studentEmail);
+                        Course newcourse = new Course(subject);
                         newStudent.addSubject(subject);
                         studentByName.put(studentName, newStudent);
+                        coursesbystudent.put(newStudent, newcourse.put(subject, newcourse));
                     }
                 } else {
                     break;
