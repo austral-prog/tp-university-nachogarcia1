@@ -1,3 +1,5 @@
+package com.university.clasestest;
+
 import com.university.course.Course;
 import com.university.csv.CSVreader;
 import com.university.csv.CSVwritter;

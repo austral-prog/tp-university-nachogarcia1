@@ -1,9 +1,15 @@
 package com.university.evaluation;
-import com.university.evaluation.Assesment;
 
- public class PracticalWork extends Assesment{
+public class PracticalWork extends Assessment {
 
-     private String tpname;
-     private String excersice;
+    public PracticalWork(String student, String subject, String evaluationName, String exerciseName, String grade) {
+        super(student, subject, evaluationName, exerciseName, grade);
+    }
 
+    @Override
+    public String getType() {
+        return "PracticalWork";
+    }
+
+    // Métodos específicos para trabajos prácticos (si los necesitas)
 }

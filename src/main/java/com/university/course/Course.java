@@ -1,6 +1,5 @@
 package com.university.course;
 
-import com.university.evaluation.Assesment;
 import com.university.evaluation.OralExam;
 import com.university.evaluation.PracticalWork;
 import com.university.evaluation.WrittenExam;

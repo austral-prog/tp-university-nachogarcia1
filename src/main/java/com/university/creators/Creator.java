@@ -29,14 +29,23 @@ public class Creator {
                     Student student = studentByName.get(studentName);
 
                     if (student != null) {
-                        student.addSubject(subject); // Si ya existe, agregamos la asignatura
-                    } else {
-                        // Si no existe, lo creamos y lo agregamos al mapa
+
                         Student newStudent = new Student(studentName, studentEmail);
                         Course newcourse = new Course(subject);
+                        student.addSubject(subject);
+                        coursesbystudent.get(newStudent).add(newcourse);
+                        // Si ya existe, agregamos la asignatura
+                    }
+                    else {
+
+                        Student newStudent = new Student(studentName, studentEmail);
+                        Course newcourse = new Course(subject);
+
                         newStudent.addSubject(subject);
                         studentByName.put(studentName, newStudent);
-                        coursesbystudent.put(newStudent, newcourse.put(subject, newcourse));
+                        coursesbystudent.put(newStudent, new ArrayList<>());
+                        coursesbystudent.get(newStudent).add(newcourse);
+                        // Si no existe, lo creamos y lo agregamos al mapa
                     }
                 } else {
                     break;
