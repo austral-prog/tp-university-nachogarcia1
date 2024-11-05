@@ -3,16 +3,15 @@ package com.university.creators;
 import com.university.course.Course;
 import com.university.csv.CSVreader;
 import com.university.student.Student;
-import com.university.University;
 
 import java.util.*;
 
 import static com.university.University.coursesbystudent;
 import static com.university.University.studentByName;
 
-public class Creator {
+public class Creator1 {
 
-    public Creator(String fileName) {
+    public Creator1(String fileName) {
         try {
             CSVreader csvreader = new CSVreader(fileName);
             csvreader.read(",");

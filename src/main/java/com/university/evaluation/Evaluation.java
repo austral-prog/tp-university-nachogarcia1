@@ -1,15 +1,15 @@
 
 package com.university.evaluation;
 
-public abstract class Assessment {
+public abstract class Evaluation {
     protected String student;
     protected String subject;
     protected String evaluationName;
     protected String exerciseName;
-    protected String grade;
+    protected double grade;
     protected Boolean passed = false;
 
-    public Assessment(String student, String subject, String evaluationName, String exerciseName, String grade) {
+    public Evaluation(String student, String subject, String evaluationName, String exerciseName, double grade) {
         this.student = student;
         this.subject = subject;
         this.evaluationName = evaluationName;
@@ -33,7 +33,7 @@ public abstract class Assessment {
         return exerciseName;
     }
 
-    public String getGrade() {
+    public double getGrade() {
         return grade;
     }
 
