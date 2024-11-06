@@ -1,34 +1,32 @@
 package com.university.fileSolutionCreator;
 
-import com.university.creators.*;
-import com.university.csv.*;
-import com.university.course.*;
-import com.university.evaluation.*;
-import com.university.evaluation.typesOfEvaluations.FinalPracticalWork;
-import com.university.evaluation.typesOfEvaluations.OralExam;
-import com.university.evaluation.typesOfEvaluations.PracticalWork;
-import com.university.evaluation.typesOfEvaluations.WrittenExam;
-import com.university.student.*;
+import com.university.evaluation.Evaluation;
+import com.university.evaluation.EvaluationSorter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Report2 {
 
     private List<String[]> fileData = new ArrayList<>();
 
-    public Report2(List<PracticalWork> practicalWorks, List<WrittenExam> writtenExams, List<OralExam> oralExams, List<FinalPracticalWork> finalPracticalWorks) {
-        EvaluationSorter evaluationSorter = new EvaluationSorter(practicalWorks, writtenExams, oralExams, finalPracticalWorks);
+    public Report2(List<Evaluation> evaluations) {
+        EvaluationSorter evaluationSorter = new EvaluationSorter(evaluations);
         List<Evaluation> orderedEvaluations = evaluationSorter.getOrderedEvaluations();
-        for ( Evaluation evaluation : orderedEvaluations ) {
-            String[] row = {evaluation.getName(), String.valueOf(student.getSubjectsamount())};
-            fileData.add(row);
+
+        Set<String> uniqueRows = new HashSet<>();
+        for (Evaluation evaluation : orderedEvaluations) {
+            String row = evaluation.getSubject() + "," + evaluation.getEvaluationName() + "," + evaluation.getStudent() + "," + String.valueOf(evaluation.getGrade());
+            if (!uniqueRows.contains(row)) {
+                uniqueRows.add(row);
+                fileData.add(new String[]{evaluation.getSubject(), evaluation.getEvaluationName(), evaluation.getStudent(), String.valueOf(evaluation.getGrade())});
+            }
+        }
     }
 
     public List<String[]> getFileData() {
         return fileData;
-    } //posible interfaz (cambiar despues)
-
-
-
+    }
 }

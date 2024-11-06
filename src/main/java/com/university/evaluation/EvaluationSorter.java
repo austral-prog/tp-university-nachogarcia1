@@ -13,24 +13,20 @@ public class EvaluationSorter {
 
     private List<Evaluation> orderedevaluations;
 
-    public EvaluationSorter(List<PracticalWork> practicalWorks, List<WrittenExam> writtenExams, List<OralExam> oralExams, List<FinalPracticalWork> finalPracticalWorks) {
+    public EvaluationSorter(List<Evaluation> evaluations) {
 
         orderedevaluations = new ArrayList<>();
 
         Comparator<Evaluation> evaluationComparator = Comparator
-                .comparing(Evaluation::getStudent)
+                .comparing(Evaluation::getSubject)
                 .thenComparing(Evaluation::getEvaluationName)
-                .thenComparing(Evaluation::getSubject);
+                .thenComparing(Evaluation::getStudent);
 
-        practicalWorks.sort(evaluationComparator);
-        finalPracticalWorks.sort(evaluationComparator);
-        oralExams.sort(evaluationComparator);
-        writtenExams.sort(evaluationComparator);
+        evaluations.sort(evaluationComparator);
 
-        orderedevaluations.addAll(finalPracticalWorks);
-        orderedevaluations.addAll(practicalWorks);
-        orderedevaluations.addAll(writtenExams);
-        orderedevaluations.addAll(oralExams);
+
+        orderedevaluations.addAll(evaluations);
+
     }
 
     public List<Evaluation> getOrderedEvaluations() {

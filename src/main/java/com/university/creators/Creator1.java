@@ -9,9 +9,16 @@ import java.util.*;
 import static com.university.University.coursesbystudent;
 import static com.university.University.studentByName;
 
-public class Creator1 {
+public class Creator1 implements Creator<Student> {  // Especificamos el tipo como Student
+
+    private String fileName;
 
     public Creator1(String fileName) {
+        this.fileName = fileName;
+    }
+
+    @Override
+    public void create() {
         try {
             CSVreader csvreader = new CSVreader(fileName);
             csvreader.read(",");
@@ -55,7 +62,8 @@ public class Creator1 {
         }
     }
 
-    public List<Student> getStudentList() {
+    @Override
+    public List<Student> getData() {
         return new ArrayList<>(studentByName.values());
     }
 }

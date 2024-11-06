@@ -16,7 +16,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ClassesTests {
+public class StudentTest {
 
     private List<Student> students;
     private Course mathCourse;

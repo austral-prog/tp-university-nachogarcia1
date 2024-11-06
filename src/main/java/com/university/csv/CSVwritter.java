@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class CSVwritter {
+public class CSVwritter  {
     String[] headers;
     String fileOut;
     List<String[]> data;
