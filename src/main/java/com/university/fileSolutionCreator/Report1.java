@@ -1,7 +1,7 @@
 package com.university.fileSolutionCreator;
 
 
-import com.university.student.Student;
+import com.university.mainobjects.Student;
 import com.university.sorters.StudentSorter;
 
 import java.util.ArrayList;

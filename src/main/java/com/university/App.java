@@ -46,16 +46,20 @@ public class App {
 
 
         String[] header3 = {"Student_Name", "Subject_Name", "Approval_Status"};
+        String[] headerEvaluations = {"Student_Name", "Subject_Name", "Evaluation_Status"};
+
         String fileIn3 = "src/main/resources/input_3.csv";
         String fileOut3 = "src/main/resources/solution_3.csv";
-
 
         Creator3 creator3 = new Creator3(fileIn3);
         creator3.create();
         List<String[]> gradedStudents = creator3.getData();
-        Report3 report3 = new Report3(gradedStudents);
+        List<String[]> evaluations2 = creator3.getEvaluations();
+        Report3 report3 = new Report3(gradedStudents, evaluations2);
         CSVwritter csvWritter3 = new CSVwritter(header3, fileOut3, report3.getFileData());
         csvWritter3.write(",");
+
+
 
 
 

@@ -1,13 +1,13 @@
 package com.university.creators;
 
-import com.university.course.Course;
+import com.university.mainobjects.Course;
 import com.university.csv.CSVreader;
 import com.university.evaluation.Evaluation;
 import com.university.evaluation.typesOfEvaluations.FinalPracticalWork;
 import com.university.evaluation.typesOfEvaluations.OralExam;
 import com.university.evaluation.typesOfEvaluations.PracticalWork;
 import com.university.evaluation.typesOfEvaluations.WrittenExam;
-import com.university.student.Student;
+import com.university.mainobjects.Student;
 
 import java.util.ArrayList;
 import java.util.List;

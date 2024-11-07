@@ -1,10 +1,10 @@
 package com.university.clasestest;
 
-import com.university.course.Course;
+import com.university.mainobjects.Course;
 import com.university.csv.CSVreader;
 import com.university.csv.CSVwritter;
 import com.university.fileSolutionCreator.Report1;
-import com.university.student.Student;
+import com.university.mainobjects.Student;
 import com.university.sorters.StudentSorter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.university.student;
+package com.university.mainobjects;
 
 import java.util.*;
 

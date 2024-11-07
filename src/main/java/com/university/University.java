@@ -1,7 +1,7 @@
 package com.university;
 
-import com.university.student.Student;
-import com.university.course.*;
+import com.university.mainobjects.Course;
+import com.university.mainobjects.Student;
 
 
 import java.util.HashMap;
