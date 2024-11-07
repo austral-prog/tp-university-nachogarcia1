@@ -43,6 +43,43 @@ public class Course {
 
     }
 
+    public List<String> getEvaluationNames() {
+        List<String> names = new ArrayList<>();
+        for (Evaluation evaluation : evaluations) {
+            names.add(evaluation.getSubject());
+        }
+        return names;
+    }
+
+    public double getFinalGrade() {
+        List<Double> grades = this.getGrades(); // Asegúrate de que el método getGrades() esté en Evaluation
+
+        if (this.getEvaluations() instanceof WrittenExam) {
+            double sum = 0.0;
+            for (double grade : grades) {
+                sum += grade;
+            }
+            return sum / grades.size();
+        } else if (this.getEvaluations() instanceof OralExam) {
+            return grades.get(0);  // Solo usa la primera calificación en caso de OralExam
+        } else if (this.getEvaluations() instanceof PracticalWork || this.getEvaluations() instanceof FinalPracticalWork) {
+            return grades.get(grades.size() - 1);  // Última calificación para trabajos prácticos
+        }
+
+        return 0.0; // Valor por defecto si no coincide con ningún tipo de evaluación
+    }
+
+
+
+    public List<Double> getGrades() {
+        List<Double> grades = new ArrayList<>();
+        for (Evaluation evaluation : evaluations) {
+            grades.add(evaluation.getGrade());
+
+        }
+        return grades;
+    }
+
     //identity
 
 

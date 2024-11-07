@@ -1,4 +1,6 @@
-package com.university.student;
+package com.university.sorters;
+
+import com.university.student.Student;
 
 import java.util.Comparator;
 import java.util.List;

@@ -8,10 +8,11 @@ public class OralExam extends Evaluation {
         super(student, subject, evaluationName, exerciseName, grade);
     }
 
+
+
     @Override
     public String getType() {
         return "ORAL_EXAM";
     }
 
-    // Métodos específicos para exámenes orales (si los necesitas)
 }

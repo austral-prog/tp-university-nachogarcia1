@@ -9,11 +9,12 @@ public class FinalPracticalWork extends Evaluation {
         super(student, subject, evaluationName, exerciseName, grade);
     }
 
+
+
     @Override
     public String getType() {
         return "FINAL_PRACTICAL_WORK";
     }
 
-    // Métodos específicos para exámenes orales (si los necesitas)
 }
 

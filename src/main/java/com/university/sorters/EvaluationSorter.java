@@ -1,9 +1,6 @@
-package com.university.evaluation;
+package com.university.sorters;
 
-import com.university.evaluation.typesOfEvaluations.FinalPracticalWork;
-import com.university.evaluation.typesOfEvaluations.OralExam;
-import com.university.evaluation.typesOfEvaluations.PracticalWork;
-import com.university.evaluation.typesOfEvaluations.WrittenExam;
+import com.university.evaluation.Evaluation;
 
 import java.util.ArrayList;
 import java.util.Comparator;

@@ -13,17 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import com.university.course.Course;
-import com.university.csv.CSVreader;
-import com.university.evaluation.Evaluation;
-import com.university.evaluation.typesOfEvaluations.FinalPracticalWork;
-import com.university.evaluation.typesOfEvaluations.OralExam;
-import com.university.evaluation.typesOfEvaluations.PracticalWork;
-import com.university.evaluation.typesOfEvaluations.WrittenExam;
-import com.university.student.Student;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.university.University.coursesbystudent;
 import static com.university.University.studentByName;
@@ -55,7 +45,7 @@ public class Creator2 implements Creator<Evaluation> {  // Especificamos el tipo
                 // Verificar si el estudiante existe en el mapa
                 Student student = studentByName.get(studentName);
                 if (student == null) {
-                    // Si el estudiante no existe, crearlo y añadirlo a studentByName
+                    // Si el estudiante no existe, crearlo y meterlo a studentByName
                     student = new Student(studentName, "email");
                     studentByName.put(studentName, student);
                 }
@@ -71,13 +61,13 @@ public class Creator2 implements Creator<Evaluation> {  // Especificamos el tipo
                     }
                 }
 
-                // Si el curso no existe, crearlo y añadirlo a la lista de cursos
+                // Si el curso no existe, crearlo y meterlo a la lista de cursos
                 if (course == null) {
                     course = new Course(subject);
                     courses.add(course);
                 }
 
-                // Verificar si ya existe la evaluación en el curso antes de añadirla
+                // Verificar si ya existe la evaluación en el curso antes de meterla
                 if (!containsEvaluation(course.getEvaluations(), evaluationName)) {
                     switch (evaluationType) {
                         case "WRITTEN_EXAM" -> course.getEvaluations().add(new WrittenExam(studentName, subject, evaluationName, exerciseName, grade));
@@ -109,4 +99,11 @@ public class Creator2 implements Creator<Evaluation> {  // Especificamos el tipo
         }
         return false;
     }
+
+
+
+
 }
+
+
+

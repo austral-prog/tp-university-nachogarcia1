@@ -9,10 +9,11 @@ public class PracticalWork extends Evaluation {
         super(student, subject, evaluationName, exerciseName, grade);
     }
 
+
+
     @Override
     public String getType() {
         return "PRACTICAL_WORK";
     }
 
-    // Métodos específicos para trabajos prácticos (si los necesitas)
 }

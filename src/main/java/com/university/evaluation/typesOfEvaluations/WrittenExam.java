@@ -13,5 +13,7 @@ public class WrittenExam extends Evaluation {
         return "WRITTEN_EXAM";
     }
 
-    // Métodos específicos para exámenes escritos (si los necesitas)
+
+
+
 }

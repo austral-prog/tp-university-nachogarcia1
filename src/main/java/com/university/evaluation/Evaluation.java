@@ -1,6 +1,14 @@
 
 package com.university.evaluation;
 
+import com.university.evaluation.typesOfEvaluations.FinalPracticalWork;
+import com.university.evaluation.typesOfEvaluations.OralExam;
+import com.university.evaluation.typesOfEvaluations.PracticalWork;
+import com.university.evaluation.typesOfEvaluations.WrittenExam;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Evaluation {
     protected String student;
     protected String subject;
@@ -37,14 +45,35 @@ public abstract class Evaluation {
         return grade;
     }
 
-    public Boolean getApproval() {
-        return passed;
+
+    public static List<List<Evaluation>> getAssessmentsByType(List<Evaluation> evaluations) {
+        List<Evaluation> oralExams = new ArrayList<>();
+        List<Evaluation> writtenExams = new ArrayList<>();
+        List<Evaluation> practicalWorks = new ArrayList<>();
+        List<Evaluation> finalPracticalWorks = new ArrayList<>();
+
+        for (Evaluation evaluation : evaluations) {
+            if (evaluation instanceof OralExam) {
+                oralExams.add(evaluation);
+            } else if (evaluation instanceof WrittenExam) {
+                writtenExams.add(evaluation);
+            } else if (evaluation instanceof PracticalWork) {
+                practicalWorks.add(evaluation);
+            } else if (evaluation instanceof FinalPracticalWork) {
+                finalPracticalWorks.add(evaluation);
+            }
+        }
+
+        List<List<Evaluation>> assessmentsByType = new ArrayList<>();
+        assessmentsByType.add(oralExams);
+        assessmentsByType.add(writtenExams);
+        assessmentsByType.add(practicalWorks);
+        assessmentsByType.add(finalPracticalWorks);
+
+        return assessmentsByType;
     }
 
-    public void ApproveStudent() {
-        passed = true;
-    }
 
-    // Método abstracto que las subclases pueden sobreescribir si es necesario
+
     public abstract String getType();
 }

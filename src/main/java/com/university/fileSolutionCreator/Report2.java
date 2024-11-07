@@ -1,7 +1,7 @@
 package com.university.fileSolutionCreator;
 
 import com.university.evaluation.Evaluation;
-import com.university.evaluation.EvaluationSorter;
+import com.university.sorters.EvaluationSorter;
 
 import java.util.ArrayList;
 import java.util.HashSet;

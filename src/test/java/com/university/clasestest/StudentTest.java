@@ -5,7 +5,7 @@ import com.university.csv.CSVreader;
 import com.university.csv.CSVwritter;
 import com.university.fileSolutionCreator.Report1;
 import com.university.student.Student;
-import com.university.student.StudentSorter;
+import com.university.sorters.StudentSorter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
