@@ -10,7 +10,7 @@ public class Report3 {
 
     public Report3(List<String[]> gradedStudents, List<String[]> evaluations) {
         for (String[] studentData : gradedStudents) {
-            if (studentData.length >= 3) {
+            if (studentData.length != 0) {
                 String studentName = studentData[0];
                 String subjectName = studentData[1];
                 String approvalStatus = studentData[2]; // Puede ser "Approved" o "Not Approved"
@@ -21,7 +21,7 @@ public class Report3 {
         }
 
         for (String[] evaluationData : evaluations) {
-            if (evaluationData.length >= 3) {
+            if (evaluationData.length != 0) {
                 String studentName = evaluationData[0];
                 String subjectName = evaluationData[1];
                 String approvalStatus = evaluationData[2];

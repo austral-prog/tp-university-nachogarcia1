@@ -89,7 +89,11 @@ public class Course {
             count++;
         }
 
-        return count > 0 ? totalGrade / count : 0.0;
+        if (count > 0) {
+            return totalGrade / count;
+        } else {
+            return 0.0;
+        }
     }
 
     public void divideEvaluationsByType(List<Evaluation> allEvaluations) {
