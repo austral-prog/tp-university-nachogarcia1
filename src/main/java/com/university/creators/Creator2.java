@@ -18,7 +18,7 @@ import java.util.List;
 import static com.university.University.coursesbystudent;
 import static com.university.University.studentByName;
 
-public class Creator2 implements Creator<Evaluation> {  // Especificamos el tipo como Evaluation
+public class Creator2 implements Creator<Evaluation> {
 
 
     private String filename;

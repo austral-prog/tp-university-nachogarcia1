@@ -1,4 +1,4 @@
-package com.university.fileSolutionCreator;
+package com.university.reports;
 
 import java.util.ArrayList;
 import java.util.List;

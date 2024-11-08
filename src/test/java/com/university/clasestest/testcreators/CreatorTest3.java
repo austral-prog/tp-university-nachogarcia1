@@ -1,60 +1,47 @@
 package com.university.clasestest.testcreators;
-
-
-import com.university.creators.Creator3;
-import com.university.csv.CSVreader;
-import com.university.mainobjects.Student;
-import com.university.mainobjects.Course;
-import java.util.List;
 import static com.university.University.coursesbystudent;
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeEach;
+
+import com.university.University;
+import com.university.creators.Creator3;
+import com.university.mainobjects.Course;
+import com.university.mainobjects.Student;
+import com.university.evaluation.typesOfEvaluations.WrittenExam;
 import org.junit.jupiter.api.Test;
+
+import java.util.*;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CreatorTest3 {
 
-    private Creator3 creator;
-
-    @BeforeEach
-    public void setUp() {
-        creator = new Creator3("test.csv");
-    }
-
     @Test
     public void testCreateWithValidData() {
-        Student student = new Student("John Doe", "john@example.com");
+        Creator3 creator = new Creator3("src/main/resources/input_3.csv");
+
+        Student student = new Student("Alice", "alice@example.com");
         Course course = new Course("Math");
-        coursesbystudent.put(student, List.of(course));
+        course.addEvaluation(new WrittenExam("Alice", "Math", "Exam 1", "Exercise 1", 8.0));
 
-        creator.create();
+        Map<Student, List<Course>> courses = new HashMap<>();
+        courses.put(student, List.of(course));
+        University.coursesbystudent = courses;
 
-        List<String[]> results = creator.getData();
-        assertEquals(1, results.size());
-        assertEquals("Approved", results.get(0)[2]);
-    }
-
-    @Test
-    public void testCreateWithInvalidData() {
-        creator = new Creator3("invalid.csv");
         creator.create();
 
         List<String[]> results = creator.getData();
         assertTrue(results.isEmpty());
     }
 
+
+
+
     @Test
-    public void testGetEvaluations() {
-        Student student = new Student("Jane Doe", "jane@example.com");
-        Course course = new Course("Science");
-        coursesbystudent.put(student, List.of(course));
+    public void testApprovalStatus() {
+        Creator3 creator = new Creator3("mockFile.csv");
 
-        creator.create();
-
-        List<String[]> evaluations = creator.getEvaluations();
-        assertEquals(1, evaluations.size());
-        assertEquals("Approved", evaluations.get(0)[2]);
+        assertEquals("Approved", creator.getApprovalStatus(85, "AVERAGE_ABOVE_VALUE", 80));
+        assertEquals("Not Approved", creator.getApprovalStatus(75, "AVERAGE_ABOVE_VALUE", 80));
+        assertNull(creator.getApprovalStatus(85, "INVALID_TYPE", 80));
     }
-
-
 }

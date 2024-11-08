@@ -1,4 +1,4 @@
-package com.university.fileSolutionCreator;
+package com.university.reports;
 
 import com.university.mainobjects.Student;
 import com.university.sorters.StudentSorter;

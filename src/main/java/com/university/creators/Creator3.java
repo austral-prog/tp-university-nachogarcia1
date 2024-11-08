@@ -58,7 +58,7 @@ public class Creator3 implements Creator {
         }
     }
 
-    private String getApprovalStatus(double grade, String criteriaType, double criteriaValue) {
+    public String getApprovalStatus(double grade, String criteriaType, double criteriaValue) {
         switch (criteriaType) {
             case "AVERAGE_ABOVE_VALUE":
             case "MAX_ABOVE_VALUE":

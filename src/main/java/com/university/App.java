@@ -5,11 +5,10 @@ import com.university.creators.Creator3;
 import com.university.csv.CSVwritter;
 import com.university.creators.Creator1;
 import com.university.evaluation.Evaluation;
-import com.university.fileSolutionCreator.Report1;
-import com.university.fileSolutionCreator.Report2;
-import com.university.fileSolutionCreator.Report3;
+import com.university.reports.Report1;
+import com.university.reports.Report2;
+import com.university.reports.Report3;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class App {

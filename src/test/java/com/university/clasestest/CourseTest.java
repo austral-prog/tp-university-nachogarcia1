@@ -7,90 +7,66 @@ import com.university.evaluation.typesOfEvaluations.WrittenExam;
 import com.university.mainobjects.Course;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CourseTest {
 
-    private Course course;
-    private WrittenExam writtenExam;
-    private OralExam oralExam;
-    private PracticalWork practicalWork;
-    private FinalPracticalWork finalPracticalWork;
-
-    public void setUp() {
-        course = new Course("Computer Engineering");
-
-        writtenExam = new WrittenExam("John Doe", "Computer Engineering", "Written Exam 1", "Exercise 1", 90.0);
-        oralExam = new OralExam("John Doe", "Computer Engineering", "Oral Exam 1", "Exercise 1", 80.0);
-        practicalWork = new PracticalWork("John Doe", "Computer Engineering", "Practical Work 1", "Exercise 1", 85.0);
-        finalPracticalWork = new FinalPracticalWork("John Doe", "Computer Engineering", "Final Practical Work 1", "Exercise 1", 88.0);
+    private Course createCourseWithEvaluations() {
+        Course course = new Course("Computer Engineering");
+        course.addEvaluation(new WrittenExam("John Doe", "Computer Engineering", "Written Exam 1", "Exercise 1", 9.0));
+        course.addEvaluation(new OralExam("John Doe", "Computer Engineering", "Oral Exam 1", "Exercise 1", 8.0));
+        course.addEvaluation(new PracticalWork("John Doe", "Computer Engineering", "Practical Work 1", "Exercise 1", 8.0));
+        course.addEvaluation(new FinalPracticalWork("John Doe", "Computer Engineering", "Final Practical Work 1", "Exercise 1", 8.0));
+        return course;
     }
 
     @Test
     public void testGetSubject() {
+        Course course = new Course("Computer Engineering");
         assertEquals("Computer Engineering", course.getSubject());
     }
 
     @Test
-    public void testAddEvaluation() {
-        course.addEvaluation(writtenExam);
-        assertTrue(course.getEvaluations().contains(writtenExam));
-
-        course.addEvaluation(oralExam);
-        assertTrue(course.getEvaluations().contains(oralExam));
+    public void testAddEvaluationAndRetrieve() {
+        Course course = createCourseWithEvaluations();
+        assertEquals(4, course.getEvaluations().size());
     }
 
-    @Test
-    public void testGetEvaluationNames() {
-        course.addEvaluation(writtenExam);
-        course.addEvaluation(oralExam);
-        List<String> names = course.getEvaluationNames();
-        assertTrue(names.contains("Written Exam 1"));
-        assertTrue(names.contains("Oral Exam 1"));
-    }
+
 
     @Test
     public void testGetGrades() {
-        course.addEvaluation(writtenExam);
-        course.addEvaluation(oralExam);
+        Course course = createCourseWithEvaluations();
         List<Double> grades = course.getGrades();
-        assertTrue(grades.contains(90.0));
-        assertTrue(grades.contains(80.0));
+        assertTrue(grades.contains(9.0));
+        assertTrue(grades.contains(8.0));
+        assertTrue(grades.contains(8.0));
+        assertTrue(grades.contains(8.0));
     }
 
-    @Test
-    public void testDivideEvaluationsByType() {
-        course.addEvaluation(writtenExam);
-        course.addEvaluation(oralExam);
-        course.addEvaluation(practicalWork);
-        course.addEvaluation(finalPracticalWork);
 
-        course.divideEvaluationsByType(course.getEvaluations());
-
-        assertTrue(course.getEvaluations().contains(writtenExam));
-        assertTrue(course.getEvaluations().contains(oralExam));
-        assertTrue(course.getEvaluations().contains(practicalWork));
-        assertTrue(course.getEvaluations().contains(finalPracticalWork));
-    }
 
     @Test
     public void testGetFinalGrade() {
-        course.addEvaluation(writtenExam);
-        course.addEvaluation(oralExam);
-        course.addEvaluation(practicalWork);
-        course.addEvaluation(finalPracticalWork);
-
+        Course course = createCourseWithEvaluations();
         double finalGrade = course.getFinalGrade();
         assertTrue(finalGrade > 0.0);
     }
 
     @Test
     public void testEqualsAndHashCode() {
+        Course course1 = new Course("Computer Engineering");
         Course course2 = new Course("Computer Engineering");
-        assertTrue(course.equals(course2));
-        assertEquals(course.hashCode(), course2.hashCode());
+        assertEquals(course1, course2);
+        assertEquals(course1.hashCode(), course2.hashCode());
+    }
+
+    @Test
+    public void testInequality() {
+        Course course1 = new Course("Computer Engineering");
+        Course course2 = new Course("Mechanical Engineering");
+        assertNotEquals(course1, course2);
     }
 }

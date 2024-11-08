@@ -1,4 +1,4 @@
-package com.university.fileSolutionCreator;
+package com.university.reports;
 
 import com.university.evaluation.Evaluation;
 import com.university.sorters.EvaluationSorter;
