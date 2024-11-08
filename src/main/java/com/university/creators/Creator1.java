@@ -9,7 +9,7 @@ import java.util.*;
 import static com.university.University.coursesbystudent;
 import static com.university.University.studentByName;
 
-public class Creator1 implements Creator<Student> {  // Especificamos el tipo como Student
+public class Creator1 implements Creator<Student> {
 
     private String fileName;
 
@@ -31,7 +31,7 @@ public class Creator1 implements Creator<Student> {  // Especificamos el tipo co
                     String studentName = data[2];
                     String studentEmail = data[3];
 
-                    // Verificamos si el estudiante ya existe en el mapa
+
                     Student student = studentByName.get(studentName);
 
                     if (student != null) {
@@ -40,7 +40,7 @@ public class Creator1 implements Creator<Student> {  // Especificamos el tipo co
                         Course newcourse = new Course(subject);
                         student.addSubject(subject);
                         coursesbystudent.get(newStudent).add(newcourse);
-                        // Si ya existe, agregamos la asignatura
+
                     }
                     else {
 
@@ -51,7 +51,7 @@ public class Creator1 implements Creator<Student> {  // Especificamos el tipo co
                         studentByName.put(studentName, newStudent);
                         coursesbystudent.put(newStudent, new ArrayList<>());
                         coursesbystudent.get(newStudent).add(newcourse);
-                        // Si no existe, lo creamos y lo agregamos al mapa
+
                     }
                 } else {
                     break;

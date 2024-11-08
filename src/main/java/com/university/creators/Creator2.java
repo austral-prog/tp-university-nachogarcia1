@@ -42,17 +42,14 @@ public class Creator2 implements Creator<Evaluation> {  // Especificamos el tipo
                 String exerciseName = data[4];
                 double grade = Double.parseDouble(data[5]);
 
-                // Verificar si el estudiante existe en el mapa
                 Student student = studentByName.get(studentName);
                 if (student == null) {
-                    // Si el estudiante no existe, crearlo y meterlo a studentByName
                     student = new Student(studentName, "email");
                     studentByName.put(studentName, student);
                 }
 
                 List<Course> courses = coursesbystudent.computeIfAbsent(student, k -> new ArrayList<>());
 
-                // Verificar si el curso ya existe
                 Course course = null;
                 for (Course c : courses) {
                     if (c.getSubject().equals(subject)) {
@@ -61,13 +58,11 @@ public class Creator2 implements Creator<Evaluation> {  // Especificamos el tipo
                     }
                 }
 
-                // Si el curso no existe, crearlo y meterlo a la lista de cursos
                 if (course == null) {
                     course = new Course(subject);
                     courses.add(course);
                 }
 
-                // Verificar si ya existe la evaluación en el curso antes de meterla
                 if (!containsEvaluation(course.getEvaluations(), evaluationName)) {
                     switch (evaluationType) {
                         case "WRITTEN_EXAM" -> course.getEvaluations().add(new WrittenExam(studentName, subject, evaluationName, exerciseName, grade));

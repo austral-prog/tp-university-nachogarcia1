@@ -1,6 +1,5 @@
 package com.university.evaluation.passingcriteria;
 
-import com.university.evaluation.passingcriteria.ApprovalCriteria;
 
 import java.util.ArrayList;
 import java.util.List;
