@@ -21,7 +21,6 @@ public class StudentTest {
     private List<Student> students;
     private Course mathCourse;
 
-    @BeforeEach
     public void setUp() {
         students = Arrays.asList(
                 new Student("Alice", "alice@example.com"),

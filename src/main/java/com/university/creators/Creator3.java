@@ -36,7 +36,6 @@ public class Creator3 implements Creator {
                 try {
                     criteriaValue = Double.parseDouble(row[2]);
                 } catch (NumberFormatException e) {
-                    System.out.println("Formato inválido en el valor del criterio: " + Arrays.toString(row));
                     continue;
                 }
 

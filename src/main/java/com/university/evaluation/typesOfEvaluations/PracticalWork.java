@@ -10,7 +10,6 @@ public class PracticalWork extends Evaluation {
     }
 
 
-
     @Override
     public String getType() {
         return "PRACTICAL_WORK";

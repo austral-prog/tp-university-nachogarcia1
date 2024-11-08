@@ -1,6 +1,5 @@
 package com.university.fileSolutionCreator;
 
-
 import com.university.mainobjects.Student;
 import com.university.sorters.StudentSorter;
 

@@ -1,24 +1,7 @@
 package com.university.fileSolutionCreator;
 
-import com.university.creators.Creator3;
-import com.university.evaluation.Evaluation;
-import com.university.sorters.EvaluationSorter;
-
-import java.util.*;
-
-import java.util.*;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import java.util.*;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
-import java.util.*;
 
 public class Report3 {
 
