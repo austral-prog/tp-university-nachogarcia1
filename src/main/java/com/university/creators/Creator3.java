@@ -52,7 +52,8 @@ public class Creator3 implements Creator {
                         }
                     }
                 }
-            } else {
+            }  {
+
             }
         }
     }
@@ -62,8 +63,11 @@ public class Creator3 implements Creator {
             case "AVERAGE_ABOVE_VALUE":
             case "MAX_ABOVE_VALUE":
             case "MIN_ABOVE_VALUE":
-                return grade >= criteriaValue ? "Approved" : "Not Approved";
-            default:
+                if (grade >= criteriaValue) {
+                    return "Approved";
+                } else {
+                    return "Not Approved";
+                }            default:
                 return null;
         }
     }
