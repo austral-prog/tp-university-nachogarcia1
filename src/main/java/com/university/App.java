@@ -1,10 +1,15 @@
 package com.university;
 
+import com.university.cli.CLI;
+import com.university.cli.CRUDRepository;
+import com.university.cli.UniversityCLI;
+import com.university.cli.RepoStudent;
 import com.university.creators.Creator2;
 import com.university.creators.Creator3;
 import com.university.csv.CSVwritter;
 import com.university.creators.Creator1;
 import com.university.evaluation.Evaluation;
+import com.university.mainobjects.Student;
 import com.university.reports.Report1;
 import com.university.reports.Report2;
 import com.university.reports.Report3;
@@ -58,6 +63,14 @@ public class App {
         CSVwritter csvWritter3 = new CSVwritter(header3, fileOut3, report3.getFileData());
         csvWritter3.write(",");
 
+
+        // CLI //
+
+
+        CRUDRepository<Student> studentRepo = new RepoStudent();
+        CLI universityCLI = new UniversityCLI(Report1.getStudent(), Report1.getCoursecountofstudent());
+        CRUDRepository<?>[] crudInterfaces = new CRUDRepository<?>[] { studentRepo };
+        universityCLI.runCLI(crudInterfaces);
 
 
 

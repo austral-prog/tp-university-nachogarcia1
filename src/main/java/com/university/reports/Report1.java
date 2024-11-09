@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Report1 {
 
-    private List<String[]> fileData = new ArrayList<>();
+    private static List<String[]> fileData = new ArrayList<>();
 
     public Report1(List<Student> students) {
         StudentSorter studentSorter = new StudentSorter(students);
@@ -20,9 +20,26 @@ public class Report1 {
             fileData.add(row);
         }
     }
-    public List<String[]> getFileData() {
+    public  List<String[]> getFileData() {
         return fileData;
     }
+
+    public static List<String> getStudent() {
+        List<String> students = new ArrayList<>();
+        for (String[] row : fileData) {
+            students.add(row[0]);
+        }
+        return students;
+    }
+
+    public static List<Integer> getCoursecountofstudent() {
+        List<Integer> coursecountofstudent = new ArrayList<>();
+        for (String[] row : fileData) {
+            coursecountofstudent.add(Integer.parseInt(row[1]));
+        }
+        return coursecountofstudent;
+    }
+
 
 }
 

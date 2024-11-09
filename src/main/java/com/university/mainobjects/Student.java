@@ -1,8 +1,12 @@
 package com.university.mainobjects;
 
+import com.university.cli.Entity;
+
 import java.util.*;
 
-public class Student {
+public class Student implements Entity {
+    private static int countStudents = 0;
+    private int id;
 
     private String name;
     private String studentEmail;
@@ -53,4 +57,14 @@ public class Student {
         return Objects.equals(name, student.name);
 }
 
+    @Override
+    public int getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+
+    }
 }

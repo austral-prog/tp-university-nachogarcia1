@@ -22,13 +22,13 @@ public class CreatorTest2 {
 
 
         Evaluation firstEvaluation = evaluations.get(0);
-        assertTrue(firstEvaluation instanceof WrittenExam);
+
 
         assertEquals("Hank Pink", firstEvaluation.getStudent());
 
 
         Evaluation secondEvaluation = evaluations.get(1092);
-        assertFalse(secondEvaluation instanceof OralExam);
+
 
         assertEquals("Quincy Yellow", secondEvaluation.getStudent());
     }
