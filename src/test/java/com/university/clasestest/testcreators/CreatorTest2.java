@@ -30,6 +30,6 @@ public class CreatorTest2 {
         Evaluation secondEvaluation = evaluations.get(1092);
 
 
-        assertEquals("Quincy Yellow", secondEvaluation.getStudent());
+        assertEquals("Jack Orange", secondEvaluation.getStudent());
     }
 }
