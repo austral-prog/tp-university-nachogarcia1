@@ -67,7 +67,7 @@ public class TestAllTypesofEvaluation {
         assertEquals("Exercise 1", finalPracticalWork.getExerciseName());
         assertEquals(88.0, finalPracticalWork.getGrade());
         assertEquals("FINAL_PRACTICAL_WORK", finalPracticalWork.getType());
-    }
 
 
+    }
 }
