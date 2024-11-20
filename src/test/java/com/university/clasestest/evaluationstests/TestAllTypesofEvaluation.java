@@ -33,6 +33,7 @@ public class TestAllTypesofEvaluation {
         assertEquals("Practical Work 1", practicalWork.getEvaluationName());
         assertEquals("Exercise 1", practicalWork.getExerciseName());
         assertEquals(85.0, practicalWork.getGrade());
+        assertEquals("PRACTICAL_WORK", practicalWork.getType());
     }
 
     @Test
@@ -43,6 +44,7 @@ public class TestAllTypesofEvaluation {
         assertEquals("Written Exam 1", writtenExam.getEvaluationName());
         assertEquals("Exercise 1", writtenExam.getExerciseName());
         assertEquals(90.0, writtenExam.getGrade());
+        assertEquals("WRITTEN_EXAM", writtenExam.getType());
     }
 
     @Test
@@ -53,6 +55,7 @@ public class TestAllTypesofEvaluation {
         assertEquals("Oral Exam 1", oralExam.getEvaluationName());
         assertEquals("Exercise 1", oralExam.getExerciseName());
         assertEquals(80.0, oralExam.getGrade());
+        assertEquals("ORAL_EXAM", oralExam.getType());
     }
 
     @Test
@@ -63,7 +66,8 @@ public class TestAllTypesofEvaluation {
         assertEquals("Final Practical Work 1", finalPracticalWork.getEvaluationName());
         assertEquals("Exercise 1", finalPracticalWork.getExerciseName());
         assertEquals(88.0, finalPracticalWork.getGrade());
-    }
+        assertEquals("FINAL_PRACTICAL_WORK", finalPracticalWork.getType());
+    }
 
 
 }
