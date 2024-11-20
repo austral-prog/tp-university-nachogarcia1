@@ -18,7 +18,7 @@ public class TestAllTypesofEvaluation {
 
     @BeforeEach
     public void setUp() {
-        // Inicializamos las evaluaciones con los parámetros adecuados
+        
         practicalWork = new PracticalWork("John Doe", "Computer Engineering", "Practical Work 1", "Exercise 1", 85.0);
         writtenExam = new WrittenExam("John Doe", "Computer Engineering", "Written Exam 1", "Exercise 1", 90.0);
         oralExam = new OralExam("John Doe", "Computer Engineering", "Oral Exam 1", "Exercise 1", 80.0);
