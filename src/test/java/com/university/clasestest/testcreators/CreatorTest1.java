@@ -3,6 +3,7 @@ package com.university.clasestest.testcreators;
 import com.university.mainobjects.Student;
 import com.university.creators.Creator1;
 import com.university.mainobjects.Course;
+import com.university.reports.Report1;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,6 +15,7 @@ import java.util.List;
 public class CreatorTest1 {
 
     private Creator1 creator = new Creator1("src/main/resources/input.csv");
+    private Report1 report = new Report1(creator.getData());
 
     @Test
     public void testCreateWithExistingStudent() {
@@ -42,5 +44,23 @@ public class CreatorTest1 {
         // Verifica que la lista de estudiantes no esté vacía
         assertTrue(creator.getData().size() > 0);
     }
+
+    @Test
+    public void testGetReportdata() {
+        report.getFileData();
+        assertTrue(report.getFileData().size() > 0);
+    }
+    @Test
+    public void testGetReportStudents() {
+        report.getStudent();
+        assertTrue(report.getStudent().size() > 0);
+    }
+    @Test
+    public void testGetReportCourses() {
+        report.getCoursecountofstudent();
+        assertFalse(report.getCoursecountofstudent().size() > 0);
+    }
+
+
 
 }
