@@ -1,1 +1,4 @@
-com.university.XRepository
+com.university.cli.repos.RepoStudent
+com.university.cli.repos.RepoCourse
+
+

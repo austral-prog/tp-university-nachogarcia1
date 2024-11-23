@@ -1,5 +1,6 @@
 package com.university.mainobjects;
 
+import com.university.cli.Entity;
 import com.university.evaluation.Evaluation;
 import com.university.evaluation.typesOfEvaluations.FinalPracticalWork;
 import com.university.evaluation.typesOfEvaluations.OralExam;
@@ -10,7 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Course {
+public class Course implements Entity {
+
+    private int id;
+
 
     private String name;
     private List<String> classrooms;
@@ -20,6 +24,7 @@ public class Course {
     private List<PracticalWork> practicalWorks;
     private List<FinalPracticalWork> finalPracticalWorks;
 
+    public Course() {}
     public Course(String name) {
         this.name = name;
         this.classrooms = new ArrayList<>();
@@ -129,5 +134,16 @@ public class Course {
         if (obj == null || getClass() != obj.getClass()) return false;
         Course subject = (Course) obj;
         return Objects.equals(name, subject.name);
+    }
+
+    @Override
+    public int getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+
     }
 }

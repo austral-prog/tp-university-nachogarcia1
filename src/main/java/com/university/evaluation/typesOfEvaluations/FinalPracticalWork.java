@@ -16,5 +16,15 @@ public class FinalPracticalWork extends Evaluation {
         return "FINAL_PRACTICAL_WORK";
     }
 
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
 

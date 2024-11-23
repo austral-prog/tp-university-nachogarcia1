@@ -12,7 +12,7 @@ public class Student implements Entity {
     private String studentEmail;
     private List<String> subjectsenlisted;
 
-
+    public Student() {}
     public Student(String name, String studentEmail) {
         this.subjectsenlisted = new ArrayList<>() {
         };

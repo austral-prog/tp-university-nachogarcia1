@@ -1,6 +1,7 @@
 
 package com.university.evaluation;
 
+import com.university.cli.Entity;
 import com.university.evaluation.typesOfEvaluations.FinalPracticalWork;
 import com.university.evaluation.typesOfEvaluations.OralExam;
 import com.university.evaluation.typesOfEvaluations.PracticalWork;
@@ -9,13 +10,13 @@ import com.university.evaluation.typesOfEvaluations.WrittenExam;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Evaluation {
+public abstract class Evaluation implements Entity {
     protected String student;
     protected String subject;
     protected String evaluationName;
     protected String exerciseName;
     protected double grade;
-    protected Boolean passed = false;
+    protected int id;
 
     public Evaluation(String student, String subject, String evaluationName, String exerciseName, double grade) {
         this.student = student;
@@ -76,4 +77,6 @@ public abstract class Evaluation {
 
 
     public abstract String getType();
+
+
 }

@@ -14,6 +14,13 @@ public class WrittenExam extends Evaluation {
     }
 
 
+    @Override
+    public int getId() {
+        return this.id;
+    }
 
-
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
 }

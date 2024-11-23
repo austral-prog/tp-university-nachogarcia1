@@ -3,7 +3,7 @@ package com.university;
 import com.university.cli.CLI;
 import com.university.cli.CRUDRepository;
 import com.university.cli.UniversityCLI;
-import com.university.cli.RepoStudent;
+import com.university.cli.repos.RepoStudent;
 import com.university.creators.Creator2;
 import com.university.creators.Creator3;
 import com.university.csv.CSVwritter;
@@ -64,13 +64,6 @@ public class App {
         csvWritter3.write(",");
 
 
-        // CLI //
-
-
-        CRUDRepository<Student> studentRepo = new RepoStudent();
-        CLI universityCLI = new UniversityCLI(Report1.getStudent(), Report1.getCoursecountofstudent());
-        CRUDRepository<?>[] crudInterfaces = new CRUDRepository<?>[] { studentRepo };
-        universityCLI.runCLI(crudInterfaces);
 
 
 

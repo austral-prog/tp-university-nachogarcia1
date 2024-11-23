@@ -1,11 +1,16 @@
-package com.university.cli;
+package com.university.cli.repos;
 
+import com.university.cli.CRUDRepository;
 import com.university.mainobjects.Student;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RepoStudent implements CRUDRepository<Student> {
     private final Map<Integer, Student> students = new HashMap<>();
+
+    public RepoStudent() {
+
+    }
 
     @Override
     public void create(Student student) {
