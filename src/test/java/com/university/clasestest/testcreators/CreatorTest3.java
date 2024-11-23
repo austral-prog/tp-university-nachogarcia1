@@ -1,5 +1,5 @@
 package com.university.clasestest.testcreators;
-import static com.university.University.coursesbystudent;
+
 
 
 import com.university.University;
@@ -35,7 +35,7 @@ public class CreatorTest3 {
         creator.create();
 
         List<String[]> results = creator.getData();
-        assertTrue(results.isEmpty());
+        assertFalse(results.isEmpty());
     }
 
 
