@@ -29,7 +29,7 @@ public class RepoCourse implements CRUDRepository<Course> {
     public Course read(int id) {
         Course course = courses.get(id);
         if (course == null) {
-            throw new RuntimeException("Course with ID " + id + " not found.");
+            throw new RuntimeException("Course with ID1 " + id + " not found.");
         }
         return course;
     }

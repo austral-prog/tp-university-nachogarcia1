@@ -78,5 +78,8 @@ public abstract class Evaluation implements Entity {
 
     public abstract String getType();
 
-
+    @Override
+    public String toString() {
+        return "Student: " + student + "| Subject: " + subject + "| Type of evaluation: " + evaluationName + "| Grade: " + grade;
+    }
 }

@@ -23,7 +23,7 @@ public class UniversityCLI implements CLI {
 
     @Override
     public void runCLI(CRUDRepository<?>[] crudInterfaces) {
-        System.out.println("Welcome to the Austral University Management App.");
+        System.out.println("Welcome to SIU Guarani");
         boolean running = true;
 
         while (running) {
@@ -92,7 +92,7 @@ public class UniversityCLI implements CLI {
     private <T extends Entity> void handleCrudOperations(CRUDRepository<T> repository) {
         boolean manageEntity = true;
         while (manageEntity) {
-            System.out.println("\nManaging: " + repository.getIdentifier());
+            System.out.println("\nManaging: " + repository.getIdentifier()); //barrita n es saltear un renglon
             System.out.println("1. Create\n2. Read\n3. Update\n4. Delete\n5. Go back");
 
             try {

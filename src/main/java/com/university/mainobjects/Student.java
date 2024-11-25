@@ -67,4 +67,8 @@ public class Student implements Entity {
         this.id = id;
 
     }
+    @Override
+    public String toString() {
+        return "|Student Name: " + this.name + ", Student Mail: " + this.studentEmail+"|";
+    }
 }

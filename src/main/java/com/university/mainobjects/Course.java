@@ -146,4 +146,9 @@ public class Course implements Entity {
         this.id = id;
 
     }
+
+    @Override
+    public String toString() {
+        return "|Course: " + this.name + "|";
+    }
 }
