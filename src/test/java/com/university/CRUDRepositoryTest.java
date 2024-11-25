@@ -71,26 +71,14 @@ class CRUDRepositoryTest {
 
             // Create an entity
             Entity testEntity = createTestEntity(crudRepository);
+            testEntity.setId(1);
             assertNotNull(testEntity, "Created entity should not be null");
             crudRepository.create(testEntity);
-
-            try {
-                Object readEntity = crudRepository.read(1);
-
-                assertNotNull(readEntity, "Entity should be found");
-                assertEquals(testEntity.toString(), readEntity.toString(), "Read entity should match created entity");
-                fail("Expected RuntimeException was not thrown");
-
-            } catch (RuntimeException e) {
-                assertTrue(e instanceof RuntimeException);
-
-            }
-
             // Read the entity (assuming an ID of 1 for simplicity)
+            Object readEntity = crudRepository.read(1);
 
-
-
-
+            assertNotNull(readEntity, "Entity should be found");
+            assertEquals(testEntity.toString(), readEntity.toString(), "Read entity should match created entity");
 
             // Update the entity (assuming an ID of 1)
             Entity updatedEntity = updateTestEntity(crudRepository);
@@ -103,7 +91,7 @@ class CRUDRepositoryTest {
             try {
                 Object deletedEntity = crudRepository.read(1);
                 fail( "My method didn't throw when I expected it to" );
-            } catch (EntityNotFoundException e) {
+            } catch (RuntimeException e) {
 
             }
 

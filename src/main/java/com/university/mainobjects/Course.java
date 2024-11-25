@@ -33,6 +33,7 @@ public class Course implements Entity {
         this.oralExams = new ArrayList<>();
         this.practicalWorks = new ArrayList<>();
         this.finalPracticalWorks = new ArrayList<>();
+        this.id = 0;
     }
 
     public String getSubject() {

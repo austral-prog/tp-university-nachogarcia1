@@ -18,6 +18,7 @@ public class Student implements Entity {
         };
         this.name = name;
         this.studentEmail = studentEmail;
+        this.id = 0;
     }
 
     //getters
